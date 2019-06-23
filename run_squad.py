@@ -387,7 +387,9 @@ def convert_examples_to_features(examples, tokenizer, max_seq_length,
         segment_ids.append(1)
       tokens.append("[SEP]")
       segment_ids.append(1)
-
+      print("======================")
+      print("unknown vocab percent {}".format(tokens.count("[UNK]") /
+                                              len(tokens[1:-1])))
       input_ids = tokenizer.convert_tokens_to_ids(tokens)
 
       # The mask has 1 for real tokens and 0 for padding tokens. Only real
